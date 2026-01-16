@@ -20,8 +20,11 @@
   {% seo %}
 </head>
 <body>
-  {% include header.html %}
-  
+  <!-- Particle chamber effect with cursor movement-->
+  <canvas id="particle-chamber-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></canvas>
+ 
+  {% include header.html %}  
+
   <main>
     {{ content }}
   </main>
@@ -30,5 +33,6 @@
   
   <!-- Scripts -->
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/particle-chamber.js' | relative_url }}"></script>
 </body>
 </html>
