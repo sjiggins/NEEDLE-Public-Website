@@ -1,5 +1,5 @@
-// Particle Cloud Chamber Effect
-// Simulates charged particles in a magnetic field
+// Enhanced Particle Cloud Chamber Effect with Vapor Trails
+// Simulates charged particles in a magnetic field with ionization trails
 
 class ParticleChamber {
   constructor(canvas) {
@@ -7,12 +7,17 @@ class ParticleChamber {
     this.ctx = canvas.getContext('2d');
     this.particles = [];
     this.maxParticles = 50;
-    this.mouse = { x: 0, y: 0, active: false };
+    this.mouse = { x: 0, y: 0, active: false, prevX: 0, prevY: 0 };
+    this.enabled = true; // Toggle state
     
     // Physics parameters
-    this.magneticField = 0.02; // Magnetic field strength
-    this.friction = 0.98; // Energy loss
-    this.emissionRate = 3; // Particles per frame when mouse moves
+    this.magneticField = 0.01;
+    this.friction = 0.99;
+    this.emissionRate = 2;
+    
+    // Trail parameters
+    this.maxTrailLength = 100;
+    this.trailFadeSpeed = 0.015;
     
     this.resize();
     this.setupEventListeners();
@@ -25,173 +30,230 @@ class ParticleChamber {
   }
   
   setupEventListeners() {
-    // Track mouse movement
     window.addEventListener('mousemove', (e) => {
+      this.mouse.prevX = this.mouse.x;
+      this.mouse.prevY = this.mouse.y;
       this.mouse.x = e.clientX;
       this.mouse.y = e.clientY;
       this.mouse.active = true;
       
-      // Emit particles when mouse moves
-      this.emitParticles();
+      // Only emit particles if enabled and mouse is moving
+      if (this.enabled) {
+        const dx = this.mouse.x - this.mouse.prevX;
+        const dy = this.mouse.y - this.mouse.prevY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance > 2) {
+          this.emitParticles();
+        }
+      }
     });
     
-    // Stop emitting when mouse leaves window
     window.addEventListener('mouseleave', () => {
       this.mouse.active = false;
     });
     
-    // Handle window resize
     window.addEventListener('resize', () => this.resize());
+  }
+  
+  enable() {
+    this.enabled = true;
+  }
+  
+  disable() {
+    this.enabled = false;
+    this.particles = []; // Clear all particles
+    this.clearCanvas(); // Clear the canvas completely
+  }
+  
+  toggle() {
+    if (this.enabled) {
+      this.disable();
+    } else {
+      this.enable();
+    }
+  }
+  
+  clearCanvas() {
+    // Get theme for proper background color
+    const theme = document.documentElement.getAttribute('data-theme') || 'light';
+    const bgColor = theme === 'dark' ? '#0d1117' : '#ffffff';
+    
+    this.ctx.fillStyle = bgColor;
+    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
   }
   
   emitParticles() {
     if (this.particles.length >= this.maxParticles) {
-      return; // Don't exceed particle limit
+      return;
     }
     
-    // Emit multiple particles for trail effect
     for (let i = 0; i < this.emissionRate; i++) {
       const angle = Math.random() * Math.PI * 2;
-      const speed = Math.random() * 2 + 1;
+      const speed = Math.random() * 1.5 + 0.5;
+      const spread = 5;
       
       this.particles.push({
-        x: this.mouse.x,
-        y: this.mouse.y,
+        x: this.mouse.x + (Math.random() - 0.5) * spread,
+        y: this.mouse.y + (Math.random() - 0.5) * spread,
         vx: Math.cos(angle) * speed,
         vy: Math.sin(angle) * speed,
-        charge: Math.random() > 0.5 ? 1 : -1, // Positive or negative charge
-        life: 1.0, // Opacity/lifetime
-        decay: 0.01 + Math.random() * 0.01,
-        size: Math.random() * 2 + 1
+        charge: Math.random() > 0.5 ? 1 : -1,
+        life: 1.0,
+        decay: 0.008 + Math.random() * 0.005,
+        size: Math.random() * 1.5 + 1,
+        trail: [],
+        trailOpacity: 1.0
       });
     }
   }
   
   updateParticles() {
-    // Update and remove dead particles
+    if (!this.enabled) return;
+    
     this.particles = this.particles.filter(particle => {
-      // Apply Lorentz force (F = q(v × B))
-      // Simplified 2D magnetic field pointing out of screen
-      const forceMagnitude = this.magneticField * particle.charge;
+      particle.trail.push({
+        x: particle.x,
+        y: particle.y,
+        opacity: particle.trailOpacity
+      });
       
-      // Perpendicular force creates spiral motion
+      if (particle.trail.length > this.maxTrailLength) {
+        particle.trail.shift();
+      }
+      
+      const forceMagnitude = this.magneticField * particle.charge;
       const fx = -particle.vy * forceMagnitude;
       const fy = particle.vx * forceMagnitude;
       
-      // Update velocity
       particle.vx += fx;
       particle.vy += fy;
-      
-      // Apply friction (energy loss)
       particle.vx *= this.friction;
       particle.vy *= this.friction;
       
-      // Update position
       particle.x += particle.vx;
       particle.y += particle.vy;
       
-      // Decrease lifetime
       particle.life -= particle.decay;
+      particle.trailOpacity -= this.trailFadeSpeed;
       
-      // Keep particle if still alive and on screen
       return particle.life > 0 && 
-             particle.x > -50 && particle.x < this.canvas.width + 50 &&
-             particle.y > -50 && particle.y < this.canvas.height + 50;
+             particle.x > -100 && particle.x < this.canvas.width + 100 &&
+             particle.y > -100 && particle.y < this.canvas.height + 100;
     });
   }
   
   drawParticles() {
-    // Clear canvas
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    
-    // Get theme colors
+    // FIXED: Theme-aware background fade
     const theme = document.documentElement.getAttribute('data-theme') || 'light';
-    const particleColor = theme === 'dark' 
-      ? 'rgba(200, 200, 200,' // Light gray for dark mode
-      : 'rgba(80, 80, 80,';    // Dark gray for light mode
     
-    // Draw each particle
+    // Use white fade for light mode, black fade for dark mode
+    const fadeColor = theme === 'dark' 
+      ? 'rgba(0, 0, 0, 0.05)'        // Black fade for dark mode
+      : 'rgba(255, 255, 255, 0.05)'; // White fade for light mode
+    
+    this.ctx.fillStyle = fadeColor;
+    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+    
+    // Theme-aware particle colors
+    const baseColor = theme === 'dark' 
+      ? { r: 200, g: 200, b: 220 } // Light blue-gray for dark mode
+      : { r: 70, g: 70, b: 90 };   // Dark blue-gray for light mode
+    
     this.particles.forEach(particle => {
+      // Draw trail
+      if (particle.trail.length > 1) {
+        this.ctx.beginPath();
+        this.ctx.moveTo(particle.trail[0].x, particle.trail[0].y);
+        
+        for (let i = 1; i < particle.trail.length; i++) {
+          const point = particle.trail[i];
+          const progress = i / particle.trail.length;
+          const opacity = particle.life * progress * 0.8;
+          
+          const r = baseColor.r;
+          const g = baseColor.g;
+          const b = baseColor.b;
+          
+          this.ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${opacity})`;
+          this.ctx.lineWidth = particle.size * (0.5 + progress * 0.5);
+          this.ctx.lineCap = 'round';
+          this.ctx.lineJoin = 'round';
+          
+          this.ctx.lineTo(point.x, point.y);
+          this.ctx.stroke();
+          this.ctx.beginPath();
+          this.ctx.moveTo(point.x, point.y);
+        }
+      }
+      
+      // Draw particle head
       this.ctx.beginPath();
-      this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-      this.ctx.fillStyle = particleColor + particle.life + ')';
+      this.ctx.arc(particle.x, particle.y, particle.size * 1.5, 0, Math.PI * 2);
+      this.ctx.fillStyle = `rgba(${baseColor.r + 30}, ${baseColor.g + 30}, ${baseColor.b + 40}, ${particle.life})`;
       this.ctx.fill();
       
-      // Optional: Add glow effect
-      if (particle.life > 0.7) {
-        this.ctx.shadowBlur = 4;
-        this.ctx.shadowColor = particleColor + particle.life + ')';
-      } else {
+      // Add glow
+      if (particle.life > 0.5) {
+        this.ctx.shadowBlur = 8;
+        this.ctx.shadowColor = `rgba(${baseColor.r}, ${baseColor.g}, ${baseColor.b + 60}, ${particle.life * 0.6})`;
+        this.ctx.fill();
         this.ctx.shadowBlur = 0;
       }
     });
   }
   
-  drawConnections() {
-    // Optional: Draw connections between nearby particles
-    const connectionDistance = 80;
-    const theme = document.documentElement.getAttribute('data-theme') || 'light';
-    const lineColor = theme === 'dark' ? 'rgba(200, 200, 200,' : 'rgba(80, 80, 80,';
-    
-    for (let i = 0; i < this.particles.length; i++) {
-      for (let j = i + 1; j < this.particles.length; j++) {
-        const p1 = this.particles[i];
-        const p2 = this.particles[j];
-        
-        const dx = p1.x - p2.x;
-        const dy = p1.y - p2.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        if (distance < connectionDistance) {
-          const opacity = (1 - distance / connectionDistance) * Math.min(p1.life, p2.life) * 0.3;
-          this.ctx.beginPath();
-          this.ctx.moveTo(p1.x, p1.y);
-          this.ctx.lineTo(p2.x, p2.y);
-          this.ctx.strokeStyle = lineColor + opacity + ')';
-          this.ctx.lineWidth = 0.5;
-          this.ctx.stroke();
-        }
-      }
-    }
-  }
-  
   animate() {
     this.updateParticles();
     this.drawParticles();
-    //this.drawConnections(); // Comment this out if you don't want connection lines
     
     requestAnimationFrame(() => this.animate());
   }
 }
 
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
-  const canvas = document.getElementById('particle-chamber-canvas');
-  if (canvas) {
-    window.particleChamber = new ParticleChamber(canvas);
-  }
-});
-
-// Toggle particle effect on/off
+// FIXED: Toggle functionality with localStorage
 document.addEventListener('DOMContentLoaded', function() {
   const canvas = document.getElementById('particle-chamber-canvas');
   const toggleBtn = document.getElementById('particle-toggle');
   
-  if (canvas && toggleBtn) {
-    let particlesEnabled = localStorage.getItem('particlesEnabled') !== 'false';
+  if (!canvas) return;
+  
+  // Initialize particle system
+  window.particleChamber = new ParticleChamber(canvas);
+  
+  // Check saved preference
+  const particlesEnabled = localStorage.getItem('particlesEnabled') !== 'false';
+  
+  if (!particlesEnabled) {
+    window.particleChamber.disable();
+  }
+  
+  // Set up toggle button
+  if (toggleBtn) {
+    // Update button appearance based on state
+    const updateButton = (enabled) => {
+      if (enabled) {
+        toggleBtn.innerHTML = '⚛️'; // Atom symbol when enabled
+        toggleBtn.style.opacity = '1';
+      } else {
+        toggleBtn.innerHTML = '⚛️'; // Same icon but dimmed
+        toggleBtn.style.opacity = '0.5';
+      }
+    };
     
-    // Set initial state
-    canvas.style.display = particlesEnabled ? 'block' : 'none';
+    // Set initial button state
+    updateButton(particlesEnabled);
     
+    // Toggle on click
     toggleBtn.addEventListener('click', function() {
-      particlesEnabled = !particlesEnabled;
-      canvas.style.display = particlesEnabled ? 'block' : 'none';
-      localStorage.setItem('particlesEnabled', particlesEnabled);
+      window.particleChamber.toggle();
+      const isEnabled = window.particleChamber.enabled;
+      
+      // Save preference
+      localStorage.setItem('particlesEnabled', isEnabled);
+      
+      // Update button appearance
+      updateButton(isEnabled);
     });
-    
-    // Initialize particle system if enabled
-    if (particlesEnabled && canvas) {
-      window.particleChamber = new ParticleChamber(canvas);
-    }
   }
 });
