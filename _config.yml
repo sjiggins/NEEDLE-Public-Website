@@ -30,3 +30,10 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - README.md
+  - QUICKSTART.md          # Solver Liquid syntax conflict, where .md example code is read by jekyll.
+  - DEPLOYMENT.md          # Solver Liquid syntax conflict, where .md example code is read by jekyll.
+  - CUSTOMIZATION.md       # Solver Liquid syntax conflict, where .md example code is read by jekyll.
+  - STRUCTURE.md           # Solver Liquid syntax conflict, where .md example code is read by jekyll. (this is the problematic one!)
+  - DESIGN.md              # Solver Liquid syntax conflict, where .md example code is read by jekyll.
+  - GETTING_STARTED.md     # Solver Liquid syntax conflict, where .md example code is read by jekyll.
+  - LICENSE            
