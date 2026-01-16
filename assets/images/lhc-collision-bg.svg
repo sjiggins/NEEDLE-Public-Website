@@ -1,0 +1,76 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="collision1" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#58a6ff;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="collision2" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#ff8c61;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="collision3" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#c084fc;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect width="1920" height="1080" fill="#0d1117"/>
+  
+  <!-- Central collision point -->
+  <circle cx="960" cy="540" r="300" fill="url(#collision1)" opacity="0.3"/>
+  <circle cx="960" cy="540" r="150" fill="url(#collision2)" opacity="0.4"/>
+  <circle cx="960" cy="540" r="50" fill="url(#collision3)" opacity="0.6"/>
+  
+  <!-- Particle tracks -->
+  <g stroke-width="2" fill="none" opacity="0.6">
+    <!-- Blue tracks -->
+    <path d="M 960 540 L 1200 300" stroke="#00d4ff"/>
+    <path d="M 960 540 L 1250 450" stroke="#00d4ff"/>
+    <path d="M 960 540 L 1180 650" stroke="#00d4ff"/>
+    <path d="M 960 540 L 1100 750" stroke="#00d4ff"/>
+    
+    <!-- Orange tracks -->
+    <path d="M 960 540 L 720 300" stroke="#ff6b35"/>
+    <path d="M 960 540 L 670 450" stroke="#ff6b35"/>
+    <path d="M 960 540 L 740 650" stroke="#ff6b35"/>
+    <path d="M 960 540 L 820 750" stroke="#ff6b35"/>
+    
+    <!-- Purple tracks -->
+    <path d="M 960 540 L 960 200" stroke="#a855f7"/>
+    <path d="M 960 540 L 960 880" stroke="#a855f7"/>
+    <path d="M 960 540 L 600 540" stroke="#a855f7"/>
+    <path d="M 960 540 L 1320 540" stroke="#a855f7"/>
+  </g>
+  
+  <!-- Particle endpoints -->
+  <g fill="#00d4ff">
+    <circle cx="1200" cy="300" r="8"/>
+    <circle cx="1250" cy="450" r="8"/>
+    <circle cx="1180" cy="650" r="8"/>
+    <circle cx="1100" cy="750" r="8"/>
+  </g>
+  
+  <g fill="#ff6b35">
+    <circle cx="720" cy="300" r="8"/>
+    <circle cx="670" cy="450" r="8"/>
+    <circle cx="740" cy="650" r="8"/>
+    <circle cx="820" cy="750" r="8"/>
+  </g>
+  
+  <g fill="#a855f7">
+    <circle cx="960" cy="200" r="8"/>
+    <circle cx="960" cy="880" r="8"/>
+    <circle cx="600" cy="540" r="8"/>
+    <circle cx="1320" cy="540" r="8"/>
+  </g>
+  
+  <!-- Energy glow effect -->
+  <circle cx="960" cy="540" r="20" fill="#ffffff" opacity="0.9"/>
+  <circle cx="960" cy="540" r="10" fill="#ffffff"/>
+</svg>

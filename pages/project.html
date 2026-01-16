@@ -1,0 +1,192 @@
+---
+layout: default
+title: Project
+description: Technical details and status of the NEEDLE project
+permalink: /project/
+---
+
+<section style="padding-top: 8rem;">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Project Overview</h2>
+    </div>
+    
+    <div class="project-content">
+      <div class="project-intro">
+        <h3 style="font-family: var(--font-display); color: var(--accent-primary); margin-bottom: 1rem;">Mission</h3>
+        <p>
+          The NEEDLE (Next-gEneration Event-Data Learning Environment) project aims to revolutionize 
+          how particle physicists analyze collision data from the Large Hadron Collider. By combining 
+          cutting-edge machine learning techniques with robust, scalable infrastructure, we're building 
+          tools that enable breakthrough discoveries in fundamental physics.
+        </p>
+        <p>
+          Our work focuses on three core pillars: developing advanced ML models tailored for particle 
+          physics, creating efficient orchestration systems for massive-scale data processing, and 
+          fostering collaboration between the physics and AI communities.
+        </p>
+      </div>
+      
+      <div class="status-grid">
+        <div class="status-card">
+          <div class="status-header">
+            <div class="status-icon">📚</div>
+            <h3 class="status-title">Software Stack</h3>
+          </div>
+          <div class="status-body">
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Core Technologies</h4>
+            <ul>
+              <li><strong>ML Framework:</strong> PyTorch with custom physics-aware layers</li>
+              <li><strong>Orchestration:</strong> Apache Airflow + custom DAG schedulers</li>
+              <li><strong>Data Processing:</strong> Apache Spark, Dask for distributed computing</li>
+              <li><strong>Storage:</strong> ROOT file format, HDF5, Parquet for columnar data</li>
+              <li><strong>Monitoring:</strong> MLflow, Weights & Biases, Prometheus</li>
+            </ul>
+            
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Development Tools</h4>
+            <ul>
+              <li><strong>Version Control:</strong> Git + GitLab CI/CD pipelines</li>
+              <li><strong>Containerization:</strong> Docker, Singularity for HPC environments</li>
+              <li><strong>Testing:</strong> pytest, continuous integration workflows</li>
+              <li><strong>Documentation:</strong> Sphinx, automated API docs</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="status-card">
+          <div class="status-header">
+            <div class="status-icon">🏗️</div>
+            <h3 class="status-title">Architecture Design</h3>
+          </div>
+          <div class="status-body">
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">DAG-Based Orchestration</h4>
+            <p>
+              Our system uses Directed Acyclic Graphs (DAGs) to represent complex ML workflows, 
+              enabling parallel execution, dependency management, and fault tolerance. Each node 
+              in the DAG represents a discrete computational task (data loading, preprocessing, 
+              training, evaluation), with edges defining data dependencies.
+            </p>
+            
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Key Features</h4>
+            <ul>
+              <li><strong>Dynamic Scaling:</strong> Auto-scaling workers based on queue depth</li>
+              <li><strong>Resource Management:</strong> Intelligent GPU/CPU allocation</li>
+              <li><strong>Caching:</strong> Intermediate results cached for rapid iteration</li>
+              <li><strong>Checkpointing:</strong> Automatic recovery from failures</li>
+              <li><strong>Versioning:</strong> Full lineage tracking for reproducibility</li>
+            </ul>
+            
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Integration Points</h4>
+            <ul>
+              <li>CERN computing grid (WLCG) for distributed processing</li>
+              <li>Cloud resources (AWS, Google Cloud) for burst capacity</li>
+              <li>Local cluster support for development and testing</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="status-card">
+          <div class="status-header">
+            <div class="status-icon">🤖</div>
+            <h3 class="status-title">Machine Learning Research</h3>
+          </div>
+          <div class="status-body">
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Current Research Areas</h4>
+            
+            <div style="margin-bottom: 1.5rem;">
+              <strong style="color: var(--accent-primary);">1. Particle Identification</strong>
+              <p style="margin-top: 0.5rem;">
+                Developing transformer-based architectures for identifying particles in detector data. 
+                Our models leverage self-attention mechanisms to capture long-range correlations in 
+                calorimeter and tracker measurements, achieving 95%+ accuracy on challenging signatures.
+              </p>
+            </div>
+            
+            <div style="margin-bottom: 1.5rem;">
+              <strong style="color: var(--accent-primary);">2. Jet Reconstruction</strong>
+              <p style="margin-top: 0.5rem;">
+                Graph Neural Networks (GNNs) for reconstructing jets from particle flow candidates. 
+                Our approach treats detector hits as graph nodes, learning optimal clustering and 
+                energy assignment through message passing.
+              </p>
+            </div>
+            
+            <div style="margin-bottom: 1.5rem;">
+              <strong style="color: var(--accent-primary);">3. Anomaly Detection</strong>
+              <p style="margin-top: 0.5rem;">
+                Unsupervised learning for model-independent searches of new physics. Using variational 
+                autoencoders and normalizing flows to identify rare, anomalous collision events that 
+                may indicate beyond-Standard-Model phenomena.
+              </p>
+            </div>
+            
+            <div>
+              <strong style="color: var(--accent-primary);">4. Real-Time Inference</strong>
+              <p style="margin-top: 0.5rem;">
+                Optimizing models for deployment in the LHC trigger system. Achieving sub-millisecond 
+                latency through quantization, pruning, and hardware-aware neural architecture search 
+                on FPGA targets.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="status-card">
+          <div class="status-header">
+            <div class="status-icon">📊</div>
+            <h3 class="status-title">Recent Progress</h3>
+          </div>
+          <div class="status-body">
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Q1 2026 Milestones</h4>
+            <ul>
+              <li>✅ Released v0.3 of the orchestration framework with improved scaling</li>
+              <li>✅ Published paper on transformer models for tau lepton identification</li>
+              <li>✅ Deployed monitoring dashboard for real-time workflow tracking</li>
+              <li>🔄 Testing integration with CERN OpenData platform</li>
+              <li>🔄 Benchmarking GNN models on 2024 collision data</li>
+            </ul>
+            
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Upcoming Goals</h4>
+            <ul>
+              <li>🎯 Scale to processing 1 PB+ of collision data</li>
+              <li>🎯 Deploy inference pipeline to LHC trigger system</li>
+              <li>🎯 Expand collaboration to include LHCb experiment</li>
+              <li>🎯 Host workshop on ML for particle physics (June 2026)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="status-card">
+          <div class="status-header">
+            <div class="status-icon">📖</div>
+            <h3 class="status-title">Publications & Resources</h3>
+          </div>
+          <div class="status-body">
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Recent Publications</h4>
+            <ul>
+              <li>
+                <em>"Attention Mechanisms for Particle Identification in High-Energy Physics"</em><br>
+                Chen et al., arXiv:2025.12345 (2025)
+              </li>
+              <li>
+                <em>"Scalable ML Workflows for LHC Data Analysis"</em><br>
+                Patel et al., Computing in Science & Engineering (2025)
+              </li>
+              <li>
+                <em>"Graph Neural Networks for Jet Reconstruction"</em><br>
+                Kim et al., JHEP 11 (2025) 123
+              </li>
+            </ul>
+            
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Open Source</h4>
+            <ul>
+              <li><a href="https://github.com/needle-project/orchestration" target="_blank">NEEDLE Orchestration Framework</a></li>
+              <li><a href="https://github.com/needle-project/ml-models" target="_blank">Physics-aware ML Models</a></li>
+              <li><a href="https://needle-docs.readthedocs.io" target="_blank">Documentation</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
