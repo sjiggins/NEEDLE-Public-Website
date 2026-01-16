@@ -144,14 +144,14 @@ class ParticleChamber {
   }
   
   drawParticles() {
-    // FIXED: Theme-aware background fade
-    const theme = document.documentElement.getAttribute('data-theme') || 'light';
-    
-    // Use white fade for light mode, black fade for dark mode
-    const fadeColor = theme === 'dark' 
-      ? 'rgba(0, 0, 0, 0.05)'        // Black fade for dark mode
-      : 'rgba(255, 255, 255, 0.05)'; // White fade for light mode
-    
+      // FIXED: Theme-aware background fade
+      const theme = document.documentElement.getAttribute('data-theme') || 'light';
+
+      // Use white fade for light mode, black fade for dark mode
+      const fadeColor = theme === 'dark' 
+	    ? 'rgba(13, 17, 23, 0.05)'    
+	    : 'rgba(255, 255, 255, 0.05)';
+          
     this.ctx.fillStyle = fadeColor;
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
     

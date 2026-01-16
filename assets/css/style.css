@@ -24,9 +24,15 @@
   --particle-purple: #a855f7;
   
   /* Typography */
-  --font-display: 'Space Mono', 'Courier New', monospace;
+  /*--font-display: 'Space Mono', 'Courier New', monospace;
   --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-accent: 'JetBrains Mono', monospace;
+  --font-accent: 'JetBrains Mono', monospace;*/
+
+
+  /* Classic Academic Typography */
+  --font-display: 'Merriweather', Georgia, serif;
+  --font-body: 'Source Serif Pro', Georgia, serif;
+  --font-accent: 'Crimson Text', 'Times New Roman', serif;
 }
 
 [data-theme="dark"] {
