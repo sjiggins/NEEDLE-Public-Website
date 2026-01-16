@@ -20,25 +20,81 @@ Jekyll-based website for the NEEDLE (NEural-basEd Diffusion Likelihood Estimatio
 
 ### Local Development
 
+#### Prerequisites
+
+**Ubuntu/Debian:**
+```bash
+# Install Ruby and development tools
+sudo apt-get update
+sudo apt-get install ruby-full build-essential zlib1g-dev -y
+
+# Configure gem path (avoid sudo for gems)
+echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+# Install Bundler
+gem install bundler
+```
+
+**macOS:**
+```bash
+# Install Ruby via Homebrew
+brew install ruby
+
+# Add Ruby to PATH
+echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+
+# Install Bundler
+gem install bundler
+```
+
+**Windows:**
+- Download and install Ruby from [RubyInstaller](https://rubyinstaller.org/)
+- Bundler is included with RubyInstaller
+
+#### Setup and Run
+
 1. **Clone the repository**
-   ```bash
+```bash
    git clone https://github.com/your-username/needle-public-website.git
-   ```
+   cd needle-public-website
+```
 
 2. **Install dependencies**
-   ```bash
+```bash
    bundle install
-   ```
+```
 
 3. **Run the development server**
-   ```bash
+```bash
    bundle exec jekyll serve
-   ```
+```
 
 4. **View the site**
    Open your browser and navigate to `http://localhost:4000`
 
 The site will automatically rebuild when you make changes to files.
+
+#### Common Commands
+```bash
+# Install/update dependencies
+bundle install
+
+# Run development server
+bundle exec jekyll serve
+
+# Run with live reload (auto-refresh browser)
+bundle exec jekyll serve --livereload
+
+# Build for production
+JEKYLL_ENV=production bundle exec jekyll build
+
+# Clean build files
+bundle exec jekyll clean
+```
 
 ## Deployment to GitHub Pages
 
