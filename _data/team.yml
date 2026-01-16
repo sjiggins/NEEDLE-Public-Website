@@ -2,7 +2,7 @@
   title: "DESY Principal Investigator"
   role: "Machine Learning Research Lead"
   description: "Leading the machine learning research & development team, and NEEDLE software stack development. Specialise in deep learning for particle physics, Monte Carlo simulations, large-scale distributed systems, and numerical mathematics."
-  affiliation: "DESY ATLAS Particle Physics Department | ATLAS Collaboration"
+  affiliation: "DESY | ATLAS Collaboration"
   image: "./assets/images/team/sjiggins.jpg"
 
 - name: "Prof. Ulrich Husemann"
@@ -20,8 +20,8 @@
   image: "https://via.placeholder.com/300x300/00d4ff/ffffff?text=AP"
 
 - name: "Prof. Felix Kahlhoefer"
-  title: "Research Scientist"
-  role: "ML Model Development"
+  title: "..."
+  role: "..."
   description: "..."
   affiliation: "KIT | ..."
   image: "https://via.placeholder.com/300x300/ff6b35/ffffff?text=JK"
@@ -30,7 +30,7 @@
   title: "..."
   role: "..."
   description: ".."
-  affiliation: "DESY ATLAS Particle Physics Department | ATLAS Collaboration"
+  affiliation: "DESY | ATLAS Collaboration"
   image: "https://via.placeholder.com/300x300/58a6ff/ffffff?text=EV"
 
 - name: "Kylian Schmidt"
@@ -45,6 +45,13 @@
   role: "..."
   description: "..."
   affiliation: "University of Zagreb | ALICE Collaboration"
+  image: "https://via.placeholder.com/300x300/ff6b35/ffffff?text=RG"
+
+- name: "Stefan Katsarov"
+  title: "..."
+  role: "..."
+  description: "..."
+  affiliation: "DEST | ATLAS Collaboration"
   image: "https://via.placeholder.com/300x300/ff6b35/ffffff?text=RG"
 
 - name: "Dr. Lena Rathmann"
