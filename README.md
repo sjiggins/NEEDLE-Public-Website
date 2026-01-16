@@ -1,15 +1,11 @@
 # NEEDLE Project Website
 
-A modern, responsive Jekyll-based website for the NEEDLE (Next-gEneration Event-Data Learning Environment) project - a machine learning initiative for particle physics at the Large Hadron Collider.
+Jekyll-based website for the NEEDLE (NEural-basEd Diffusion Likelihood Estimations) project - a machine learning project funded by Helmholtz AI for particle physics at the Large Hadron Collider and future colliders, tasked with enabling Simulation-based Inference for high data experiments.
 
 ## Features
 
-- 🎨 **Modern Design**: Clean, scientific aesthetic with distinctive typography
-- 🌓 **Light/Dark Theme**: Automatic theme switching with localStorage persistence
-- 📱 **Responsive**: Mobile-first design that works on all devices
-- ⚡ **Performance**: Optimized for fast loading and smooth animations
-- 🔧 **Easy to Customize**: Well-organized code structure with CSS variables
-- 📊 **Three Main Sections**:
+- **Light/Dark Theme**: Automatic theme switching with localStorage persistence
+- **Three Main Sections**:
   - Landing page with project overview
   - Team members showcase
   - Detailed project information and status updates
@@ -26,8 +22,7 @@ A modern, responsive Jekyll-based website for the NEEDLE (Next-gEneration Event-
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/needle-website.git
-   cd needle-website
+   git clone https://github.com/your-username/needle-public-website.git
    ```
 
 2. **Install dependencies**
@@ -239,14 +234,10 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 For issues or questions:
 - Open an issue on GitHub
-- Contact: contact@needle-project.org
+- Contact: stephen.pw.jiggins@gmail.com
 
 ## Acknowledgments
 
 - Inspired by the Agency Jekyll theme
 - Built for the particle physics and ML communities
-- Designed with accessibility and performance in mind
-
 ---
-
-Built with ❤️ for the NEEDLE Project
