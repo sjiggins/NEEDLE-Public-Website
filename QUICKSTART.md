@@ -31,7 +31,7 @@ git push -u origin main
 
 ### Step 3: Enable GitHub Pages
 
-1. Go to repository Settings → Pages
+1. Go to repository Settings ->  Pages
 2. Under "Source", select "GitHub Actions"
 3. Wait 2-3 minutes for deployment
 
@@ -43,7 +43,7 @@ Your site is live at: `https://YOUR-USERNAME.github.io/YOUR-REPO/`
 
 ### Prerequisites
 
-Install Ruby (if not already installed):
+Install Ruby (if not already installed) - see README.md for more details
 
 **macOS:**
 ```bash
@@ -61,7 +61,7 @@ Download from https://rubyinstaller.org/
 ### Run Locally
 
 ```bash
-cd needle-website
+cd needle-public-website
 bundle install
 bundle exec jekyll serve
 ```
@@ -81,9 +81,9 @@ See `CUSTOMIZATION.md` for complete checklist!
 
 ## Need Help?
 
-- 📖 Full documentation: `README.md`
-- 🚀 Deployment guide: `DEPLOYMENT.md`
-- ✅ Customization checklist: `CUSTOMIZATION.md`
+- Full documentation: `README.md`
+- Deployment guide: `DEPLOYMENT.md`
+- Customization checklist: `CUSTOMIZATION.md`
 
 ## Common Issues
 
@@ -104,5 +104,3 @@ bundle install
 - Check console for errors
 
 ---
-
-**That's it!** You're ready to go. 🎉

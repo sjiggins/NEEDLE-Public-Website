@@ -219,7 +219,7 @@ GitHub Actions workflow definitions for CI/CD
 ## Build Process
 
 ```
-Source Files → Jekyll Processing → Static Site (_site/) → GitHub Pages
+Source Files -> Jekyll Processing -> Static Site (_site/) -> GitHub Pages
 ```
 
 ### What Jekyll Does:
@@ -272,5 +272,3 @@ Source Files → Jekyll Processing → Static Site (_site/) → GitHub Pages
 - Efficient animations (CSS-based)
 
 ---
-
-This structure provides a maintainable, scalable foundation for the NEEDLE project website.

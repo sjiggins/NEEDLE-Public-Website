@@ -196,5 +196,3 @@ git push
 ```
 
 ---
-
-**Need help?** Check `README.md` and `DEPLOYMENT.md` for detailed instructions!

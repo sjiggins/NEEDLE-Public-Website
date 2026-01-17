@@ -270,7 +270,7 @@ needle-website/
 - Edge (latest)
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
-## Technologies Used
+## Software Stack
 
 - **Jekyll** - Static site generator
 - **Liquid** - Templating language
@@ -295,5 +295,4 @@ For issues or questions:
 ## Acknowledgments
 
 - Inspired by the Agency Jekyll theme
-- Built for the particle physics and ML communities
 ---

@@ -24,7 +24,7 @@ This guide will walk you through deploying the NEEDLE website to GitHub Pages.
 Open your terminal and navigate to the website directory:
 
 ```bash
-cd needle-website
+cd needle-public-website
 ```
 
 Initialize git (if not already done):
@@ -69,7 +69,9 @@ git push -u origin main
 3. In the left sidebar, click "Pages"
 4. Under "Build and deployment":
    - Source: Select "GitHub Actions"
-5. The site will automatically build and deploy
+5. Select jekyll deployment
+6. Commit a jekyll.yml file
+7. Site will run via a runner for deployment
 
 ### Step 6: Wait for Deployment
 
@@ -85,7 +87,7 @@ Your site will be available at:
 https://YOUR-USERNAME.github.io/YOUR-REPO/
 ```
 
-For example: `https://johnsmith.github.io/needle-website/`
+For example: `https://sjiggins.github.io/needle-public-website/`
 
 ## Custom Domain (Optional)
 
@@ -170,16 +172,3 @@ Visit `http://localhost:4000` in your browser.
 - [GitHub Pages Documentation](https://docs.github.com/en/pages)
 - [Jekyll Documentation](https://jekyllrb.com/docs/)
 - [Git Documentation](https://git-scm.com/doc)
-
-## Need Help?
-
-If you encounter issues:
-
-1. Check the [README.md](README.md) file
-2. Review GitHub Actions logs in the Actions tab
-3. Open an issue on GitHub
-4. Contact the project maintainer
-
----
-
-Happy deploying! 🚀
