@@ -71,9 +71,13 @@
   image: "https://via.placeholder.com/300x300/ff6b35/ffffff?text=RG"
 
 - name: "Nicolo Trevisani"
-  title: "..."
-  role: "..."
-  description: "..."
-  affiliation: "KIT | ..."
-  image: "https://via.placeholder.com/300x300/ff6b35/ffffff?text=RG"
+  title: "Post-Doctoral Researcher"
+  role: ""
+  description: >
+    I am a postdoc researcher at the Karlsruhe Institute of Technology. I am part of the CMS
+     collaboration at CERN, where my research line is centered around the study of the Higgs
+     boson and the reconstruction and calibration of muons. I try to get the best out of the
+     available data using machine learning, keeping a tight bond with physics. 
+  affiliation: "KIT | CMS Collaboration"
+  image: "assets/images/team/nicolo.png"
 
