@@ -1,0 +1,110 @@
+---
+layout: default
+title: DAG Workflow
+description: Software Orchestration using Directed Acyclic Graphs
+permalink: /project/dag/
+---
+
+<section style="padding-top: 8rem;">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">DAG-Based Workflow Orchestration</h2>
+      <p style="max-width: 800px; margin: 1.5rem auto 0; color: var(--text-secondary); font-size: 1.1rem;">
+        Scalable, reproducible machine learning pipelines for particle physics analysis
+      </p>
+    </div>
+    
+    <div class="project-content">
+      <div class="project-intro">
+        <h3 style="font-family: var(--font-display); color: var(--accent-primary); margin-bottom: 1rem;">Overview</h3>
+        <p>
+          Our DAG (Directed Acyclic Graph) based orchestration system provides a robust framework for 
+          managing complex ML workflows in particle physics. By representing computational tasks as 
+          nodes and dependencies as edges, we enable efficient parallel execution, automatic resource 
+          management, and complete workflow reproducibility.
+        </p>
+      </div>
+      
+      <div class="status-grid">
+        <div class="status-card">
+          <div class="status-header">
+            <div class="status-icon">
+	      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 0 1-1.125-1.125v-3.75ZM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-8.25ZM3.75 16.125c0-.621.504-1.125 1.125-1
+.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-2.25Z" /> 
+              </svg>  
+	    </div>
+            <h3 class="status-title">Workflow Architecture</h3>
+          </div>
+          <div class="status-body">
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Core Components</h4>
+            <ul>
+              <li><strong>Task Scheduler:</strong> Intelligent scheduling based on resource availability and dependencies</li>
+              <li><strong>Dependency Manager:</strong> Automatic resolution of task dependencies and execution order</li>
+              <li><strong>Resource Allocator:</strong> Dynamic GPU/CPU allocation across distributed infrastructure</li>
+              <li><strong>State Manager:</strong> Checkpointing and recovery for fault-tolerant execution</li>
+            </ul>
+            
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Key Features</h4>
+            <ul>
+              <li>Automatic parallelization of independent tasks</li>
+              <li>Intelligent caching of intermediate results</li>
+              <li>Support for heterogeneous computing (CPU/GPU/TPU)</li>
+              <li>Real-time monitoring and visualization</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="status-card">
+          <div class="status-header">
+            <div class="status-icon">⚡</div>
+            <h3 class="status-title">Implementation Details</h3>
+          </div>
+          <div class="status-body">
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Technology Stack</h4>
+            <ul>
+              <li><strong>Core Engine:</strong> Apache Airflow with custom operators</li>
+              <li><strong>Distribution:</strong> Dask for parallel computing</li>
+              <li><strong>Storage:</strong> Distributed file system with versioning</li>
+              <li><strong>Monitoring:</strong> Prometheus + Grafana dashboards</li>
+            </ul>
+            
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Workflow Definition</h4>
+            <p>
+              Workflows are defined using a Python-based DSL that allows researchers to specify 
+              complex data processing and ML training pipelines with minimal boilerplate. The 
+              system automatically handles parallelization, resource management, and error recovery.
+            </p>
+          </div>
+        </div>
+        
+        <div class="status-card">
+          <div class="status-header">
+            <div class="status-icon">📊</div>
+            <h3 class="status-title">Performance & Scalability</h3>
+          </div>
+          <div class="status-body">
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Benchmark Results</h4>
+            <ul>
+              <li><strong>Throughput:</strong> Processing 1 PB+ of LHC collision data</li>
+              <li><strong>Scaling:</strong> Linear speedup up to 100+ workers</li>
+              <li><strong>Efficiency:</strong> 90%+ GPU utilization during training</li>
+              <li><strong>Latency:</strong> Sub-second task scheduling overhead</li>
+            </ul>
+            
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Resource Optimization</h4>
+            <p>
+              Our system employs intelligent bin-packing algorithms to maximize resource utilization 
+              across heterogeneous computing infrastructure, reducing computational costs while 
+              maintaining high throughput.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="{{ '/project' | relative_url }}" class="btn btn-secondary">Back to Project Overview</a>
+      </div>
+    </div>
+  </div>
+</section>

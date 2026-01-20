@@ -1,0 +1,106 @@
+---
+layout: default
+title: Neural Surrogates
+description: Fast neural network surrogates for expensive simulations
+permalink: /project/surrogates/
+---
+
+<section style="padding-top: 8rem;">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Neural Surrogates</h2>
+      <p style="max-width: 800px; margin: 1.5rem auto 0; color: var(--text-secondary); font-size: 1.1rem;">
+        High-fidelity neural network approximations of computationally expensive physics simulations
+      </p>
+    </div>
+    
+    <div class="project-content">
+      <div class="project-intro">
+        <h3 style="font-family: var(--font-display); color: var(--accent-primary); margin-bottom: 1rem;">Overview</h3>
+        <p>
+          Neural surrogates replace expensive Monte Carlo simulations with fast neural network 
+          approximations, enabling real-time inference and analysis. Our models achieve 1000x+ 
+          speedup while maintaining high fidelity to the underlying physics.
+        </p>
+      </div>
+      
+      <div class="status-grid">
+        <div class="status-card">
+          <div class="status-header">
+            <div class="status-icon">🧠</div>
+            <h3 class="status-title">Architecture Design</h3>
+          </div>
+          <div class="status-body">
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Network Architectures</h4>
+            <ul>
+              <li><strong>Graph Neural Networks:</strong> Modeling particle interactions and detector geometry</li>
+              <li><strong>Transformers:</strong> Capturing long-range dependencies in event structure</li>
+              <li><strong>Physics-Informed NNs:</strong> Embedding conservation laws and symmetries</li>
+              <li><strong>Ensemble Methods:</strong> Uncertainty quantification via model ensembles</li>
+            </ul>
+            
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Training Strategy</h4>
+            <ul>
+              <li>Multi-fidelity learning from simulation hierarchies</li>
+              <li>Active learning for efficient data acquisition</li>
+              <li>Transfer learning across detector configurations</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="status-card">
+          <div class="status-header">
+            <div class="status-icon">⚙️</div>
+            <h3 class="status-title">Simulation Replacement</h3>
+          </div>
+          <div class="status-body">
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Target Simulations</h4>
+            <p>
+              We build surrogates for the most computationally expensive components of the 
+              LHC analysis pipeline:
+            </p>
+            <ul>
+              <li><strong>Detector Response:</strong> Full GEANT4 simulation replacement</li>
+              <li><strong>Shower Development:</strong> Electromagnetic and hadronic cascades</li>
+              <li><strong>Parton Showers:</strong> QCD radiation and hadronization</li>
+              <li><strong>Matrix Elements:</strong> Hard scattering cross-sections</li>
+            </ul>
+            
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Validation</h4>
+            <p>
+              Rigorous validation against full simulation ensuring statistical accuracy 
+              for physics measurements.
+            </p>
+          </div>
+        </div>
+        
+        <div class="status-card">
+          <div class="status-header">
+            <div class="status-icon">⚡</div>
+            <h3 class="status-title">Performance Metrics</h3>
+          </div>
+          <div class="status-body">
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Speedup & Accuracy</h4>
+            <ul>
+              <li><strong>Inference Time:</strong> 1000x-10000x faster than full simulation</li>
+              <li><strong>Accuracy:</strong> <1% deviation in key observables</li>
+              <li><strong>Memory Footprint:</strong> 100x reduction vs. simulation caches</li>
+              <li><strong>Uncertainty:</strong> Calibrated confidence intervals</li>
+            </ul>
+            
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Impact</h4>
+            <p>
+              Neural surrogates enable previously infeasible analyses by reducing computational 
+              requirements from millions of CPU-hours to seconds on a single GPU. This democratizes 
+              access to sophisticated physics analyses.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="{{ '/project' | relative_url }}" class="btn btn-secondary">Back to Project Overview</a>
+      </div>
+    </div>
+  </div>
+</section>
