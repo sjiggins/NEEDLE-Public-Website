@@ -1,0 +1,110 @@
+---
+layout: default
+title: Diffusion & Flow Models
+description: Neural diffusion and flow-matching models for likelihood inference
+permalink: /project/diffusion/
+---
+
+<section style="padding-top: 8rem;">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Diffusion & Flow-Matching Models</h2>
+      <p style="max-width: 800px; margin: 1.5rem auto 0; color: var(--text-secondary); font-size: 1.1rem;">
+        Non-equilibrium inspired generative models to likelihood and posterior inference in high-energy physics
+      </p>
+    </div>
+    
+    <div class="project-content">
+      <div class="project-intro">
+        <h3 style="font-family: var(--font-display); color: var(--accent-primary); margin-bottom: 1rem;">Overview</h3>
+        <p>
+          Develop non-equilibrium inpsired models, such as diffusion and flow-matching, for probabilistic inference 
+          in particle physics. These models learn to transform simple prior distributions into complex 
+          posterior distributions over physics parameters, enabling efficient sampling and likelihood 
+          evaluation for high-dimensional problems.
+        </p>
+      </div>
+      
+      <div class="status-grid">
+        <div class="status-card">
+          <div class="status-header">
+            <div class="status-icon">
+	      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+		<path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-2.25-1.313M21 7.5v2.25m0-2.25-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3 2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75 2.25-1.313M12 21.75V19.5m0 2.25-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25" />
+	      </svg>
+	    </div>
+            <h3 class="status-title">Model Architectures</h3>
+          </div>
+          <div class="status-body">
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Diffusion Models</h4>
+            <ul>
+              <li><strong>Score-based models:</strong> Learning the score function of data distributions</li>
+              <li><strong>DDPM variants:</strong> Denoising diffusion probabilistic models optimized for physics</li>
+            </ul>
+            
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Flow-Matching</h4>
+            <ul>
+              <li><strong>Continuous normalizing flows:</strong> ODE-based generative models</li>
+              <li><strong>Optimal transport:</strong> Flow matching with optimal transport objectives</li>
+              <li><strong>Rectified flows:</strong> Straightening probability flows for faster sampling</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="status-card">
+          <div class="status-header">
+            <div class="status-icon">
+	      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+		<path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23-.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+	      </svg>
+	    </div>
+            <h3 class="status-title">Physics Applications</h3>
+          </div>
+          <div class="status-body">
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Posterior Inference</h4>
+            <p>
+              The diffusion/flow-matching based models enable tractable posterior/likelihood inference for complex physics scenarios where 
+              traditional methods scale poorly for high dimensional data. The resulting likelihood/posterior inference results achieve orders of magnitude 
+              statistical sensitivity to LHC particles physics problems. 
+            </p>
+            
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Use Cases</h4>
+            <ul>
+              <li>Parameter estimation of Standard Model parameters in di-top quark production from proton-proton collisions at the LHC</li>
+	      <li>Parameter estimation of Charge-Parity violating parameters in top quark production in association with a Higgs-boson, from proton-proton collisions at the LHC,
+	      as a portal into beyodn Standard model  (BSM) physics.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="status-card">
+          <div class="status-header">
+            <div class="status-icon">
+	      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+		<path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+	      </svg>
+	    </div>
+            <h3 class="status-title">Research Highlights</h3>
+          </div>
+          <div class="status-body">
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Recent Advances</h4>
+            <ul>
+              <li>...</li>
+            </ul>
+            
+            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Publications</h4>
+            <p>
+              "Title", journal, (year)<br>
+              "Title", journal, (year)<br>
+              "Title", journal, (year)
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="{{ '/project' | relative_url }}" class="btn btn-secondary">Back to Project Overview</a>
+      </div>
+    </div>
+  </div>
+</section>
