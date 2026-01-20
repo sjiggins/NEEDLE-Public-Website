@@ -34,11 +34,13 @@
   image: "https://via.placeholder.com/300x300/58a6ff/ffffff?text=EV"
 
 - name: "Kylian Schmidt"
-  title: "..."
-  role: ""
-  description: ""
-  affiliation: "KIT  | CMS Collaboration"
-  image: "https://via.placeholder.com/300x300/a855f7/ffffff?text=MT"
+  title: "PhD Student"
+  role: "Software Engineer"
+  description: >
+    Part of the Machine Learning and Software Development Team. Working 
+    on the main NEEDLE orchestration tool.
+  affiliation: "KIT | CMS Collaboration"
+  image: "./assets/images/team/kylian.jpg"
 
 - name: "Nino Kovacic"
   title: "..."
@@ -69,9 +71,13 @@
   image: "https://via.placeholder.com/300x300/ff6b35/ffffff?text=RG"
 
 - name: "Nicolo Trevisani"
-  title: "..."
-  role: "..."
-  description: "..."
-  affiliation: "KIT | ..."
-  image: "https://via.placeholder.com/300x300/ff6b35/ffffff?text=RG"
+  title: "Post-Doctoral Researcher"
+  role: ""
+  description: >
+    I am a postdoc researcher at the Karlsruhe Institute of Technology. I am part of the CMS
+     collaboration at CERN, where my research line is centered around the study of the Higgs
+     boson and the reconstruction and calibration of muons. I try to get the best out of the
+     available data using machine learning, keeping a tight bond with physics. 
+  affiliation: "KIT | CMS Collaboration"
+  image: "assets/images/team/nicolo.png"
 
