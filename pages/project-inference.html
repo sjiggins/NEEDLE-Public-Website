@@ -10,7 +10,7 @@ permalink: /project/inference/
     <div class="section-header">
       <h2 class="section-title">Real-Time Inference</h2>
       <p style="max-width: 800px; margin: 1.5rem auto 0; color: var(--text-secondary); font-size: 1.1rem;">
-        Sub-millisecond ML inference for LHC trigger systems and online event selection
+        Efficient and fast computation of non-equilibrium models
       </p>
     </div>
     
@@ -18,33 +18,34 @@ permalink: /project/inference/
       <div class="project-intro">
         <h3 style="font-family: var(--font-display); color: var(--accent-primary); margin-bottom: 1rem;">Overview</h3>
         <p>
-          Real-time inference systems enable ML models to run directly in the LHC trigger, making 
-          split-second decisions on which collision events to save for analysis. Operating at 40 MHz 
-          collision rates, these systems must achieve sub-microsecond latency while maintaining high 
-          accuracy.
+          Non-equilibrium inspired models, such as diffusion/flow-matching, are costly in terms of their inference time.
+	  Requiring significant acceleration to be even remotely viable in high energy particle physics data analyses.
+	  As such, advanced methodologies and mathematical approximations are required to enable statistical inference with
+	  such models.
         </p>
       </div>
       
       <div class="status-grid">
         <div class="status-card">
           <div class="status-header">
-            <div class="status-icon">🎯</div>
+            <div class="status-icon">
+	      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+		<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
+	      </svg>
+	    </div>
             <h3 class="status-title">Hardware Deployment</h3>
           </div>
           <div class="status-body">
             <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Target Platforms</h4>
             <ul>
-              <li><strong>FPGAs:</strong> Ultra-low latency (<1 μs) for L1 trigger</li>
+              <li><strong>CPUs:</strong> Ultra-low latency (<1 μs) for L1 trigger</li>
               <li><strong>GPUs:</strong> High throughput for HLT (High-Level Trigger)</li>
-              <li><strong>ASICs:</strong> Custom accelerators for specific algorithms</li>
-              <li><strong>Edge TPUs:</strong> Power-efficient deployment</li>
             </ul>
             
             <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Optimization Techniques</h4>
             <ul>
-              <li>Quantization (INT8/INT4) for reduced precision</li>
-              <li>Pruning and knowledge distillation</li>
-              <li>Hardware-aware neural architecture search</li>
+              <li>...</li>
+              <li>...</li>
               <li>Pipeline parallelism for throughput</li>
             </ul>
           </div>
@@ -52,54 +53,31 @@ permalink: /project/inference/
         
         <div class="status-card">
           <div class="status-header">
-            <div class="status-icon">⚡</div>
-            <h3 class="status-title">Latency Requirements</h3>
+            <div class="status-icon">
+	      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+		<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
+	      </svg>	      
+	    </div>
+            <h3 class="status-title">Title</h3>
           </div>
           <div class="status-body">
             <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Trigger Levels</h4>
             <ul>
-              <li><strong>L1 Trigger (FPGA):</strong> <1 μs latency @ 40 MHz</li>
-              <li><strong>HLT (GPU/CPU):</strong> <10 ms latency @ 100 kHz</li>
-              <li><strong>Offline (GPU):</strong> ~100 ms for complex inference</li>
+              <li><strong>...:</strong> ...</li>
+              <li><strong>...:</strong> ...</li>
             </ul>
             
             <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Performance Metrics</h4>
             <p>
-              Our optimized models achieve:
+              ...
             </p>
             <ul>
-              <li>500 ns average latency on Xilinx VU13P FPGAs</li>
-              <li>50 MHz throughput for parallel inference</li>
-              <li><0.5% accuracy degradation vs. full precision</li>
-              <li>2W power consumption per inference unit</li>
+              <li>...</li>
+              <li>...</li>
             </ul>
           </div>
         </div>
-        
-        <div class="status-card">
-          <div class="status-header">
-            <div class="status-icon">🔬</div>
-            <h3 class="status-title">Physics Impact</h3>
-          </div>
-          <div class="status-body">
-            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Trigger Applications</h4>
-            <ul>
-              <li><strong>Jet Tagging:</strong> b-tagging, tau identification in real-time</li>
-              <li><strong>Missing Energy:</strong> Fast neutrino reconstruction</li>
-              <li><strong>Anomaly Detection:</strong> Model-independent BSM searches</li>
-              <li><strong>Particle ID:</strong> Real-time electron/photon discrimination</li>
-            </ul>
-            
-            <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Discovery Potential</h4>
-            <p>
-              ML-enhanced triggers increase sensitivity to rare processes by 30-50%, enabling 
-              discoveries that would be missed by traditional trigger algorithms. This is particularly 
-              crucial for long-lived particles and other non-standard signatures.
-            </p>
-          </div>
-        </div>
-      </div>
-      
+              
       <div style="text-align: center; margin-top: 3rem;">
         <a href="{{ '/project' | relative_url }}" class="btn btn-secondary">Back to Project Overview</a>
       </div>

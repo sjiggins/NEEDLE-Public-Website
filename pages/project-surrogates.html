@@ -10,7 +10,8 @@ permalink: /project/surrogates/
     <div class="section-header">
       <h2 class="section-title">Neural Surrogates</h2>
       <p style="max-width: 800px; margin: 1.5rem auto 0; color: var(--text-secondary); font-size: 1.1rem;">
-        High-fidelity neural network approximations of computationally expensive physics simulations
+        Neural network architectures used to learn intractable posteriors/likelihoods/likelihood ratios from Monte Carlo simulations of
+	high energy particle interactions.
       </p>
     </div>
     
@@ -18,81 +19,79 @@ permalink: /project/surrogates/
       <div class="project-intro">
         <h3 style="font-family: var(--font-display); color: var(--accent-primary); margin-bottom: 1rem;">Overview</h3>
         <p>
-          Neural surrogates replace expensive Monte Carlo simulations with fast neural network 
-          approximations, enabling real-time inference and analysis. Our models achieve 1000x+ 
-          speedup while maintaining high fidelity to the underlying physics.
+	  ...
         </p>
       </div>
-      
       <div class="status-grid">
         <div class="status-card">
           <div class="status-header">
-            <div class="status-icon">🧠</div>
+            <div class="status-icon">
+	      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+		<path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
+	      </svg>
+	    </div>
             <h3 class="status-title">Architecture Design</h3>
           </div>
           <div class="status-body">
             <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Network Architectures</h4>
             <ul>
-              <li><strong>Graph Neural Networks:</strong> Modeling particle interactions and detector geometry</li>
-              <li><strong>Transformers:</strong> Capturing long-range dependencies in event structure</li>
-              <li><strong>Physics-Informed NNs:</strong> Embedding conservation laws and symmetries</li>
-              <li><strong>Ensemble Methods:</strong> Uncertainty quantification via model ensembles</li>
+              <li><strong>Transformers:</strong> Capturing long-range dependencies in particle representation of high energy interactions, via attention mechanisms. Leveraging new nestred tensor PyTorch functionality for memory efficient training data footprint</li>
             </ul>
             
             <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Training Strategy</h4>
             <ul>
-              <li>Multi-fidelity learning from simulation hierarchies</li>
-              <li>Active learning for efficient data acquisition</li>
-              <li>Transfer learning across detector configurations</li>
+              <li>Conditional training of probability behaviour via transformer attention masking</li>
+	      <li>...</li>
             </ul>
           </div>
         </div>
         
         <div class="status-card">
           <div class="status-header">
-            <div class="status-icon">⚙️</div>
-            <h3 class="status-title">Simulation Replacement</h3>
+            <div class="status-icon">
+	      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+		<path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+		<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+	      </svg>
+	    </div>
+            <h3 class="status-title">Interpretability</h3>
           </div>
           <div class="status-body">
             <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Target Simulations</h4>
             <p>
-              We build surrogates for the most computationally expensive components of the 
-              LHC analysis pipeline:
+              Leverage new interpretability methods such as ...
             </p>
             <ul>
-              <li><strong>Detector Response:</strong> Full GEANT4 simulation replacement</li>
-              <li><strong>Shower Development:</strong> Electromagnetic and hadronic cascades</li>
-              <li><strong>Parton Showers:</strong> QCD radiation and hadronization</li>
-              <li><strong>Matrix Elements:</strong> Hard scattering cross-sections</li>
+              <li><strong>Expected Gradients:</strong> ...</li>
+              <li><strong>Integrated Gradients:</strong> ...</li>
             </ul>
             
             <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Validation</h4>
             <p>
-              Rigorous validation against full simulation ensuring statistical accuracy 
-              for physics measurements.
-            </p>
+	      ...
+	    </p>
           </div>
         </div>
         
         <div class="status-card">
           <div class="status-header">
-            <div class="status-icon">⚡</div>
+            <div class="status-icon">
+	      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+		<path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+	      </svg>
+	    </div>
             <h3 class="status-title">Performance Metrics</h3>
           </div>
           <div class="status-body">
             <h4 style="font-family: var(--font-display); color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">Speedup & Accuracy</h4>
             <ul>
-              <li><strong>Inference Time:</strong> 1000x-10000x faster than full simulation</li>
-              <li><strong>Accuracy:</strong> <1% deviation in key observables</li>
-              <li><strong>Memory Footprint:</strong> 100x reduction vs. simulation caches</li>
-              <li><strong>Uncertainty:</strong> Calibrated confidence intervals</li>
+              <li><strong>Probabilistic measures:</strong> ...</li>
+              <li><strong>...:</strong> ...</li>
             </ul>
             
             <h4 style="font-family: var(--font-display); color: var(--text-primary); margin: 1.5rem 0 0.5rem; font-size: 1.1rem;">Impact</h4>
             <p>
-              Neural surrogates enable previously infeasible analyses by reducing computational 
-              requirements from millions of CPU-hours to seconds on a single GPU. This democratizes 
-              access to sophisticated physics analyses.
+              Neural surrogates learn intractable likelihoods/posteriors ...
             </p>
           </div>
         </div>
