@@ -690,3 +690,62 @@ main {
   position: relative;
   z-index: 10;
 }
+
+/* ============================================
+   DROPDOWN NAVIGATION
+   ============================================ */
+
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px var(--shadow-color);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-link {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.dropdown-link:hover {
+  background: var(--bg-accent);
+  color: var(--accent-primary);
+  text-decoration: none;
+  padding-left: 1.75rem;
+}
+
+/* Dropdown arrow indicator */
+.nav-dropdown > .nav-link::after {
+  content: ' ▾';
+  font-size: 0.8em;
+  margin-left: 0.25rem;
+  opacity: 0.7;
+}
