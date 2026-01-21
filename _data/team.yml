@@ -50,11 +50,11 @@
   image: "https://via.placeholder.com/300x300/ff6b35/ffffff?text=RG"
 
 - name: "Stefan Katsarov"
-  title: "..."
+  title: "PhD Student"
   role: "..."
-  description: "..."
-  affiliation: "DEST | ATLAS Collaboration"
-  image: "https://via.placeholder.com/300x300/ff6b35/ffffff?text=RG"
+  description: "Developing Neural Simulation-Based Inference (NSBI) methods, with a primary focus on Neural Likelihood Ratio Estimation (NLRE), to probe the CP structure of top-associated Higgs production at the ATLAS experiment."
+  affiliation: "DESY | ATLAS Collaboration"
+  image: "assets/images/team/Stefan.png"
 
 - name: "Dr. Lena Rathmann"
   title: "..."
