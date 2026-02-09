@@ -43,11 +43,11 @@
   image: "./assets/images/team/kylian.jpg"
 
 - name: "Nino Kovacic"
-  title: "..."
-  role: "..."
-  description: "..."
+  title: "PhD Student"
+  role: "Machine Learning in Physics Researcher"
+  description: "Interested in, and working on, applications of Machine Learning within the field of high energy physics, primarily regarding NSBI, and NLRE in particuar. Part of the Development Team."
   affiliation: "University of Zagreb | ALICE Collaboration"
-  image: "https://via.placeholder.com/300x300/ff6b35/ffffff?text=RG"
+  image: "assets/images/team/nkovacic_biopic_placeholder.png"
 
 - name: "Stefan Katsarov"
   title: "PhD Student"
