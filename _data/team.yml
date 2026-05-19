@@ -15,7 +15,7 @@
 - name: "PD Dr. Judith Katzy"
   title: "DESY Principal Investigator"
   role: "Project Lead"
-  description: "Coordinating the overall project, overseeing all packages. Focus on machine learning in particle physics. Member of the ATLAS Collaboration and working on Higgs and top quark physics and related Monte Carlo phenomenology."
+  description: "Managing and coordinating the overall project. Working on  machine learning for particle physics. Member of the ATLAS Collaboration with focus on Higgs and top quark physics and related Monte Carlo phenomenology. "
   affiliation: "DESY | ATLAS Collaboration"
   image: "./assets/images/team/PhotoJudithKatzy.jpeg"
 
