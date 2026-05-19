@@ -13,11 +13,11 @@
   image: "https://via.placeholder.com/300x300/a855f7/ffffff?text=MR"
 
 - name: "PD Dr. Judith Katzy"
-  title: "..."
-  role: "..."
-  description: "..."
+  title: "DESY Principal Investigator"
+  role: "Project Lead"
+  description: "Coordinating the overall project, overseeing all packages. Focus on machine learning in particle physics. Member of the ATLAS Collaboration and working on Higgs and top quark physics and related Monte Carlo phenomenology."
   affiliation: "DESY | ATLAS Collaboration"
-  image: "https://via.placeholder.com/300x300/00d4ff/ffffff?text=AP"
+  image: "./assets/images/team/PhotoJudithKatzy.jpeg"
 
 - name: "Prof. Felix Kahlhoefer"
   title: "..."
